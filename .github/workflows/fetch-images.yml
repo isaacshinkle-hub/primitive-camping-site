@@ -1,0 +1,31 @@
+name: Fetch site images
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download images from Squarespace CDN
+        run: |
+          mkdir -p images
+          base="https://images.squarespace-cdn.com/content/v1/69ffa64855a1000b9f64532a"
+          curl -sL "$base/38a23dab-3c68-408b-a314-079d66d8bee9/pcasu-logo.jpg?format=1000w" -o images/pcasu-logo.jpg
+          curl -sL "$base/88e9bcc2-26a3-4df1-82f8-c33700279430/zion-angels-landing-view.jpg?format=1500w" -o images/zion-angels-landing-view.jpg
+          curl -sL "$base/1778444092482-88HYQDQAQ32ZDISZIX8S/zion-kolob-canyon.jpg?format=1500w" -o images/zion-kolob-canyon.jpg
+          curl -sL "$base/1778444010528-4V3OLGRLU0BGIRSTOB7I/zion-great-white-throne.jpg?format=1500w" -o images/zion-great-white-throne.jpg
+          curl -sL "$base/d3343259-73f4-48f2-b96e-98b15d17b52d/loincloth1.jpg?format=1000w" -o images/loincloth1.jpg
+          curl -sL "$base/48685334-97ba-47d4-bc2a-ef76b922e8af/Shirt1.jpg?format=1000w" -o images/shirt1.jpg
+          curl -sL "$base/36988685-6d26-421f-b999-50be20d420f9/Shirt2.jpg?format=1000w" -o images/shirt2.jpg
+          curl -sL "$base/8d49592b-88f8-4664-a034-fe48a9274a9c/backpack1bedroll.jpg?format=1000w" -o images/backpack1bedroll.jpg
+          curl -sL "$base/1778444149154-YAML6QNB1K24G2PD13OB/bryce-hoodoos.jpg?format=1000w" -o images/bryce-hoodoos.jpg
+          curl -sL "$base/e610283b-92ce-42fc-a939-5a690f63edd4/loincloth4.jpg?format=1000w" -o images/loincloth4.jpg
+          ls -la images
+      - name: Commit images
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@users.noreply.github.com"
+          git add images
+          git commit -m "Add local copies of site images"
+          git push
