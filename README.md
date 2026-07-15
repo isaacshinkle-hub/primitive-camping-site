@@ -1,3 +1,7 @@
-# Primitive Camping LLC — static site
+# Primitive Camping LLC
 
-Static sandbox of primitivecampingadventures.com. Built for GitHub Pages.
+Official static website for Primitive Camping / Primitive Adventures.
+
+- Live site: https://primitivecampingadventures.com/
+- GitHub Pages: https://isaacshinkle-hub.github.io/primitive-camping-site/
+- Business email: primitive.camping.llc@gmail.com
