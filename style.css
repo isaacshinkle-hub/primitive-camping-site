@@ -1,0 +1,64 @@
+/* Primitive Camping LLC — static site */
+:root{
+  --ink:#1c1c1c;
+  --muted:#555;
+  --line:#e6e2dc;
+  --bg:#ffffff;
+  --accent:#7a3b1d;
+  --accent-dark:#5d2c14;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',system-ui,-apple-system,'Segoe UI',sans-serif;color:var(--ink);background:var(--bg);line-height:1.65}
+img{max-width:100%;display:block}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+
+header{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.2rem 5vw;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:.8rem;text-decoration:none}
+.brand img{width:64px;height:64px;border-radius:12px}
+.brand span{font-weight:600;font-size:1.05rem;color:var(--ink);letter-spacing:.02em}
+nav{display:flex;gap:1.4rem;flex-wrap:wrap}
+nav a{color:var(--ink);font-size:.95rem;padding:.2rem 0;border-bottom:2px solid transparent}
+nav a:hover{text-decoration:none;border-bottom-color:var(--accent)}
+nav a.active{border-bottom-color:var(--accent);font-weight:600}
+
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:3rem;align-items:center;padding:4rem 5vw;max-width:1300px;margin:0 auto}
+.hero h1{font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.12;font-weight:700;letter-spacing:-.01em}
+.hero p{margin-top:1.2rem;color:var(--muted);font-size:1.05rem;max-width:34rem}
+.hero img{border-radius:14px;box-shadow:0 18px 45px rgba(0,0,0,.14)}
+@media(max-width:800px){.hero{grid-template-columns:1fr}}
+
+.btn{display:inline-block;margin-top:1.8rem;background:var(--ink);color:#fff;padding:.9rem 1.8rem;border-radius:999px;font-size:.85rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;transition:background .2s}
+.btn:hover{background:var(--accent);text-decoration:none}
+.btn.small{margin-top:1rem;padding:.65rem 1.3rem;font-size:.75rem}
+
+.page{max-width:1100px;margin:0 auto;padding:3.5rem 5vw}
+.page-narrow{max-width:820px}
+.page h1{font-size:clamp(2rem,4vw,2.8rem);margin-bottom:1rem;letter-spacing:-.01em}
+.page h2{font-size:1.5rem;margin:2.2rem 0 .6rem}
+.page p{margin:.7rem 0;color:var(--muted)}
+.page .lead{font-size:1.08rem;color:var(--ink)}
+.center{text-align:center}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.8rem;margin-top:2.5rem}
+.card{border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s,transform .2s}
+.card:hover{box-shadow:0 14px 34px rgba(0,0,0,.10);transform:translateY(-3px)}
+.card img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.card .body{padding:1.3rem 1.4rem 1.6rem;display:flex;flex-direction:column;flex:1}
+.card h3{font-size:1.15rem;margin-bottom:.4rem}
+.card p{color:var(--muted);font-size:.92rem;flex:1}
+.price{margin-top:.9rem;font-weight:600}
+.price .was{color:#a09a92;text-decoration:line-through;font-weight:400;margin-left:.5rem;font-size:.9rem}
+.badge{display:inline-block;background:#f3ede6;color:var(--accent-dark);font-size:.7rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:.2rem .6rem;border-radius:999px;margin-left:.6rem}
+
+ul.tidy{margin:.6rem 0 .6rem 1.2rem;color:var(--muted)}
+ul.tidy li{margin:.35rem 0}
+
+.notice{background:#faf7f2;border:1px solid var(--line);border-radius:14px;padding:1.6rem 1.8rem;margin-top:1.6rem}
+
+footer{border-top:1px solid var(--line);margin-top:4rem;padding:3rem 5vw;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem;max-width:1300px;margin-left:auto;margin-right:auto}
+footer h4{font-size:1rem;margin-bottom:.6rem}
+footer p,footer a{font-size:.92rem;color:var(--muted)}
+footer .foot-brand{font-weight:600;color:var(--ink);font-size:1.05rem}
+.copyright{grid-column:1/-1;text-align:center;font-size:.8rem;color:#a09a92;border-top:1px solid var(--line);padding-top:1.4rem;margin-top:.5rem}
